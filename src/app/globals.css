@@ -4,6 +4,8 @@
 @source not "../**/*.test.ts";
 @source not "../**/*.test.tsx";
 @source not "../test";
+@source not "../assets";
+@source not "./icon.svg";
 
 @theme inline {
   --font-sans: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
@@ -16,6 +18,11 @@
   --color-yellow: #ffb964;
   --color-white: #fcfaf9;
   --color-slate: #191826;
+  --color-glow-cyan: rgb(64 255 246 / 28%);
+  --color-glow-amber: rgb(255 146 1 / 15%);
+  --color-glow-orange: rgb(250 116 83 / 15%);
+
+  --container-page: 70rem;
 
   --text-preset-1: 5.5rem;
   --text-preset-1--line-height: 1;
@@ -55,4 +62,28 @@
   button:not(:disabled) {
     @apply cursor-pointer;
   }
+}
+
+@utility v-container {
+  padding-inline: max(--spacing(5), (100% - var(--container-page)) / 2);
+
+  @variant md {
+    padding-inline: max(--spacing(11), (100% - var(--container-page)) / 2);
+  }
+}
+
+@utility v-focus {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate;
+}
+
+@utility v-glow-* {
+  --glow: --value(--color-glow-*);
+  background-image: radial-gradient(
+    closest-side,
+    var(--glow) 25%,
+    color-mix(in srgb, var(--glow) 75%, transparent) 45%,
+    color-mix(in srgb, var(--glow) 40%, transparent) 60%,
+    color-mix(in srgb, var(--glow) 15%, transparent) 75%,
+    transparent
+  );
 }
