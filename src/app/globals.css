@@ -73,7 +73,11 @@
 }
 
 @utility v-focus {
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate;
+  @apply outline-slate focus-visible:outline-2 focus-visible:outline-offset-4;
+}
+
+@utility v-button {
+  @apply flex items-center justify-center gap-2 rounded-xl py-4 text-preset-6 font-bold v-focus motion-safe:transition-colors motion-safe:duration-200;
 }
 
 @utility v-glow-* {

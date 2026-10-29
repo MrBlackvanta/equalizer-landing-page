@@ -1,4 +1,4 @@
-import { Backdrop, Hero } from "@/views/home";
+import { Backdrop, Hero, PremiumEq } from "@/views/home";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Backdrop />
       <main className="grow">
         <Hero />
+        <PremiumEq />
       </main>
     </>
   );
