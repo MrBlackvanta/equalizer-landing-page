@@ -12,4 +12,29 @@ describe("SiteFooter", () => {
       within(footer).getByRole("link", { name: "Abdelrhman Abdelaal" }),
     ).toBeInTheDocument();
   });
+
+  it("offers the support address as a mail link", () => {
+    render(<SiteFooter />);
+
+    expect(
+      screen.getByRole("link", { name: "equalizer@example.com" }),
+    ).toHaveAttribute("href", "mailto:equalizer@example.com");
+  });
+
+  it("names each social link after its network", () => {
+    render(<SiteFooter />);
+
+    expect(screen.getByRole("link", { name: "Facebook" })).toHaveAttribute(
+      "href",
+      "https://www.facebook.com/",
+    );
+    expect(screen.getByRole("link", { name: "Instagram" })).toHaveAttribute(
+      "href",
+      "https://www.instagram.com/",
+    );
+    expect(screen.getByRole("link", { name: "Twitter" })).toHaveAttribute(
+      "href",
+      "https://twitter.com/",
+    );
+  });
 });
