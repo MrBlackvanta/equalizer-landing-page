@@ -5,13 +5,51 @@
 @source not "../**/*.test.tsx";
 @source not "../test";
 
-@theme {
+@theme inline {
   --font-sans: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --color-*: initial;
+  --color-cyan: #66e2dc;
+  --color-orange: #fa7453;
+  --color-yellow: #ffb964;
+  --color-white: #fcfaf9;
+  --color-slate: #191826;
+
+  --text-preset-1: 5.5rem;
+  --text-preset-1--line-height: 1;
+  --text-preset-1--letter-spacing: -0.0625rem;
+  --text-preset-1-tablet: 4rem;
+  --text-preset-1-tablet--line-height: 1;
+  --text-preset-1-tablet--letter-spacing: -0.0625rem;
+  --text-preset-1-mobile: 2.5rem;
+  --text-preset-1-mobile--line-height: 1;
+  --text-preset-1-mobile--letter-spacing: -0.0625rem;
+
+  --text-preset-2: 4rem;
+  --text-preset-2--line-height: 1.1;
+
+  --text-preset-3: 2.5rem;
+  --text-preset-3--line-height: 1.1;
+
+  --text-preset-4: 1.25rem;
+  --text-preset-4-tablet: 1.125rem;
+
+  --text-preset-5: 1rem;
+
+  --text-preset-6: 1.125rem;
+  --text-preset-6--line-height: 2rem;
+  --text-preset-6--letter-spacing: -0.01em;
 }
 
 @layer base {
   html {
     @apply overflow-y-scroll;
+  }
+
+  body {
+    @apply bg-white text-slate;
   }
 
   button:not(:disabled) {
