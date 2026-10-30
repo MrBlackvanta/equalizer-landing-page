@@ -19,7 +19,7 @@ const shareImage = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "equalizer: the headline We make your music sound extraordinary, beside the app open on a phone.",
+  alt: "equalizer: the headline We make your music sound extraordinary, beside the home page with its phone app and Premium EQ card.",
 };
 
 export const metadata: Metadata = {
