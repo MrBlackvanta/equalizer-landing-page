@@ -1,5 +1,5 @@
+import illustration2x from "@/assets/illustration-app-2x.webp";
 import illustration from "@/assets/illustration-app.webp";
-import illustration2x from "@/assets/illustration-app@2x.webp";
 import { AndroidIcon, AppleIcon } from "@/components/icons";
 import CardPattern from "./card-pattern";
 
